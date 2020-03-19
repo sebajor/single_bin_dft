@@ -1,0 +1,23 @@
+--------------------------------- Version Log ----------------------------------
+Version                                 Path
+System Generator                        /opt/Xilinx/14.7/ISE_DS/ISE/sysgen
+Matlab 8.2.0.701 (R2013b)               /usr/local/MATLAB/R2013b
+ISE                                     /opt/Xilinx/14.7/ISE_DS/ISE
+--------------------------------------------------------------------------------
+Summary of Errors:
+Error 0001: Illegal input type on port: addr
+     Block: 'twiddle_factor/twiddle_factor/im_twidd'
+--------------------------------------------------------------------------------
+
+Error 0001:
+
+Reported by:
+  'twiddle_factor/twiddle_factor/im_twidd'
+
+Details:
+The addr port is being driven by a UFix_8_0.
+The addr port must be a UFix_3_0.
+3 bits are needed to address the specified memory depth of 8.
+Error occurred during "Rate and Type Error Checking".
+
+--------------------------------------------------------------------------------
