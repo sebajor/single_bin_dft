@@ -1,0 +1,48 @@
+41.6dB
+0 db
+
+Relative phase mean: -34.55607907818566
+Relative phase std: 0.3664939629017462
+Mean Pow: 0.09514166368661456
+std Pow: 0.038059763221352946
+
+20 db
+
+Relative phase mean: -173.0672520979836
+Relative phase std: 0.18802634587751976
+Mean Pow: -20.500382133126287
+std Pow: 0.03471304076816294
+
+9 dB
+
+Relative phase mean: 48.34593889363415
+Relative phase std: 0.33909667448529834
+Mean Pow: 9.233516941504632
+std Pow: 0.04010947453036968
+
+
+leak 41.9 0dB
+
+Relative phase mean: -23.59035462641812
+Relative phase std: 0.7895670369053733
+Mean Pow: 0.05604477991743419
+std Pow: 0.12230068475284424
+
+leak 41.9 9dB
+Relative phase mean: -17.06504124938203
+Relative phase std: 0.5459664904319922
+Mean Pow: 9.241167131314686
+std Pow: 0.07524247877612388
+
+
+leak 41.9 20dB
+Relative phase mean: -43.0183615836703
+Relative phase std: 0.6503725206502375
+Mean Pow: -20.53740156911092
+std Pow: 0.11790249909892517
+
+
+
+
+
+
