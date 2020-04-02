@@ -1,0 +1,6 @@
+repetitive: manteniendo constante la fuente reseteamos la msdft y vemos la repetitividad de las mediciones.Entre cada par de mediciones esperamos 1 seg
+
+
+continous: manteniendo constante la fuente reseteamos solo las brams y 
+vemos si el sistema explota.
+entre cada par de mediciones esperamos 5 seg
