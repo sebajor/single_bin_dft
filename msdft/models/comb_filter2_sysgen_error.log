@@ -1,0 +1,23 @@
+--------------------------------- Version Log ----------------------------------
+Version                                 Path
+System Generator                        /opt/Xilinx/14.7/ISE_DS/ISE/sysgen
+Matlab 8.2.0.701 (R2013b)               /usr/local/MATLAB/R2013b
+ISE                                     /opt/Xilinx/14.7/ISE_DS/ISE
+--------------------------------------------------------------------------------
+Summary of Errors:
+Error 0001: Illegal type on port: we
+     Block: 'comb_filter2/comb_filter/Single Port RAM'
+--------------------------------------------------------------------------------
+
+Error 0001:
+
+Reported by:
+  'comb_filter2/comb_filter/Single Port RAM'
+
+Details:
+The we port has data type Fix_16_14.
+The we port must be a boolean signal.
+
+Error occurred during "Rate and Type Error Checking".
+
+--------------------------------------------------------------------------------

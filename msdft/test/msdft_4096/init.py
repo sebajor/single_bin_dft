@@ -7,27 +7,27 @@ import calandigital as calan
 import time
 
 IP = '192.168.0.40'
-bof = 'msdft_12.bof'
+bof = 'msdft_12_v2_2.bof' #tiene comb 2.. la otra tiene la version anterior
 fpga = corr.katcp_wrapper.FpgaClient(IP)
 time.sleep(1)
 fpga.upload_program_bof(bof,3000)
 time.sleep(1)
 
 
-fpga.write_int('rst_cycles', 4096)
+fpga.write_int('rst_cycles', 2048)
 fpga.write_int('msdft_sel',0)
 fpga.write_int('twidd_num',0)
-fpga.write_int('acc_len', 2**10)
+#fpga.write_int('acc_len', 2**10)
 fpga.write_int('rst',1)
 fpga.write_int('sync',0)
 fpga.write_int('rst_save',1)
-fpga.write_int('rst_fft',1)
-fpga.write_int('start_fft',1)
-fpga.write_int('rst_fft',0)
+#fpga.write_int('rst_fft',1)
+#fpga.write_int('start_fft',1)
+#fpga.write_int('rst_fft',0)
 
 freq = np.linspace(0,67.5,128, endpoint=False)
 
-plot_fft(fpga, 67.5)
+#plot_fft(fpga, 67.5)
 fpga.write_int('rst_save',0)
 fpga.write_int('msdft1_msdft_rst_bram',1)
 fpga.write_int('msdft1_msdft_rst_bram',1)
@@ -35,7 +35,7 @@ fpga.write_int('rst',0)
 fpga.write_int('sync',1)
 
 
-fft_data = np.array(struct.unpack('>1024Q', fpga.read('fft_spect', 1024*8)))
+#fft_data = np.array(struct.unpack('>1024Q', fpga.read('fft_spect', 1024*8)))
 
 
 
@@ -152,7 +152,7 @@ def plot_data(index):
     angs = vals[2]
     fig = plt.figure()
     ax1 = fig.add_subplot(121)
-    ax1.plot(10*(np.log10(powA[index,:])-np.log10(powB[index,:])))
+    ax1.plot(10*(np.log10(powA[index,:]+1)-np.log10(powB[index,:]+1)))
     ax1.grid()
     ax1.set_title('Power difference')
     ax1.set_ylabel('dB')
@@ -166,8 +166,8 @@ def plot_data(index):
 
     fig1 = plt.figure()
     ax3 = fig1.add_subplot(111)
-    ax3.plot(freq[1397:1402],10*np.log10(powA[:,100]), label='ZDOK0')
-    ax3.plot(freq[1397:1402],10*np.log10(powB[:,100]), label='ZDOK1')
+    ax3.plot(freq[1397:1402],10*np.log10(powA[:,100]+1), label='ZDOK0')
+    ax3.plot(freq[1397:1402],10*np.log10(powB[:,100]+1), label='ZDOK1')
     ax3.set_ylabel('dB')
     ax3.legend()
     ax3.set_title('Spectrum')
@@ -178,8 +178,8 @@ def plot_data(index):
 
     print('Relative phase mean: '+str(np.mean(angs[index,:])))
     print('Relative phase std: '+str(np.std(angs[index,:])))
-    print('Mean Pow: '+str(np.mean(10*(np.log10(powA[index,:])-np.log10(powB[index,:])))))
-    print('std Pow: '+str(np.std(10*(np.log10(powA[index,:])-np.log10(powB[index,:])))))
+    print('Mean Pow: '+str(np.mean(10*(np.log10(powA[index,:]+1)-np.log10(powB[index,:]+1)))))
+    print('std Pow: '+str(np.std(10*(np.log10(powA[index,:]+1)-np.log10(powB[index,:]+1)))))
 
 
 
