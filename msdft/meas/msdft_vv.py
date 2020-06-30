@@ -9,7 +9,6 @@ from plot_spect import plot_spect
 
 
 IP = '192.168.0.40'
-#IP = '192.168.1.14'
 bof = 'msdft_12_v2.bof.gz' #tiene comb 2.. la otra tiene la version anterior
 fpga = corr.katcp_wrapper.FpgaClient(IP)
 time.sleep(1)

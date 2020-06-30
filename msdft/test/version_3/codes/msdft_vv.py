@@ -9,8 +9,7 @@ from plot_spect import plot_spect
 
 
 IP = '192.168.0.40'
-#IP = '192.168.1.14'
-bof = 'msdft_12_v2.bof.gz' #tiene comb 2.. la otra tiene la version anterior
+bof = 'msdft_12_v3.bof.gz' #tiene comb 2.. la otra tiene la version anterior
 fpga = corr.katcp_wrapper.FpgaClient(IP)
 time.sleep(1)
 fpga.upload_program_bof(bof,3000)
@@ -20,6 +19,7 @@ time.sleep(1)
 fpga.write_int('rst_cycles', 1200)
 fpga.write_int('msdft_sel',0)
 fpga.write_int('twidd_num',0)
+fpga.write_int('en_autorst',0)
 #fpga.write_int('acc_len', 2**10)
 fpga.write_int('rst',1)
 fpga.write_int('sync',0)

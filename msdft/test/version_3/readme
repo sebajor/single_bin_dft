@@ -1,0 +1,22 @@
+In this version we try to achieve stability in the system
+in order to do that, when the multiplication with the 
+twiddle factors takes place we keep all the bits, because
+the algorithm stands after the initialization period inside
+the resonator there is a perfect subtraction between the 
+sample taken at N-1 cycles.
+
+ie you want the term [(x(n)-x(n-N))*twidd - resonator] be exact
+in order to eliminate the sample x(n-N) inside the resonator.
+
+To do that we diminish the bitwidth of the twiddle factor 
+to 9_7 bits.----> this generate at most a sinewave  with 
+6*8=48dB of snr, so is a compromise between the dynamic range
+ i want to achieve and the stability of the system
+
+
+
+..Still is unstable :(
+
+
+
+

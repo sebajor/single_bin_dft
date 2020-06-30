@@ -1,0 +1,7 @@
+meas with the roach and make sweeps in the generators.
+We use the agilent and rodhe schwartz.
+
+
+The default twiddle factors are [1397,1398, 1399,1400, 1401]
+
+for 135Mhz clk this correspond to [46.05494505, 46.08791209, 46.12087912, 46.15384615, 46.18681319].
